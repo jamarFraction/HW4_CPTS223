@@ -118,8 +118,7 @@ int max3(int leftSum, int rightSum, int borderSums){
 
         return rightSum;
 
-    }else if(borderSums >= rightSum && borderSums >= leftSum){
-
+    }else {
         return borderSums;
     }
 }

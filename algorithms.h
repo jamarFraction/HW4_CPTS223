@@ -13,6 +13,3 @@ int maxSubSum3(const vector<int> &a);
 int max3(int leftSum, int rightSum, int borderSums);
 
 int maxSubSum4(const vector<int> &a);
-
-
-

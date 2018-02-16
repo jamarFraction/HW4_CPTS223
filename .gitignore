@@ -34,3 +34,5 @@
 HW4
 HW4.dSYM/Contents/Info.plist
 *.txt
+*.json
+.vscode/tasks.json
