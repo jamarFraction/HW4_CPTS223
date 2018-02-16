@@ -1,11 +1,13 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
+#include <time.h>
+#define CLOCKS_PER_MS (CLOCKS_PER_SEC / 1000)    //microseconds
 
 using namespace std;
 using std::ifstream;
 
-void startTest();
+double startTest(int (*maxSubSumAlgorithm)(const vector<int> &a), int arraySize);
 
 void fillVector(vector<int> &passedVector, ifstream &passedFile);
 

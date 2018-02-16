@@ -1,13 +1,6 @@
 #include "Backbone.h"
 
-void startTest(){
-
-    //array size for input
-    int arraySize = 0;
-
-    //prompt user for array size to test, read in value
-    cout << "Please enter an array size to test (must be some value N = 2^x): ";
-    cin >> arraySize;
+double startTest(int (*maxSubSumAlgorithm)(const vector<int> &a), int arraySize){
 
     //Generate folder path, this will not change during execution
     //testInput/{arraySize}/
@@ -17,6 +10,9 @@ void startTest(){
 
     //File path
     string filePath;
+
+    //double average run time
+    double averageRunTime = 0.0;
 
     //run this test on each of the input files
     for(int i = 0; i < 10; i++){
@@ -39,16 +35,33 @@ void startTest(){
 
             //file path DNE
             cout << "ERROR: .txt file path does not exist!" << endl;
-            break;
+            return -1;
         } 
 
         //start the timer and pass to each MaxSubSum algo
-        //
-        //
-        //
-        //to-do
+        clock_t startTime, endTime;
 
+        //start the time
+        startTime = clock();
+
+        //pass to the parameter algorithm
+        maxSubSumAlgorithm(intVector);
+
+        //end the time
+        endTime = clock();
+
+        //calculate game duration
+        double gameDuration = 0.0;
+        gameDuration = (double)(endTime - startTime) / CLOCKS_PER_MS;
+
+        //add to the averageRunTime
+        averageRunTime += gameDuration;
     }
+
+    //calculate the averageRunTime
+    averageRunTime = (averageRunTime / arraySize);
+
+    return averageRunTime;
 }
 
 void fillVector(vector<int> &passedVector, ifstream &passedFile){
